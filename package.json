@@ -1,0 +1,40 @@
+{
+  "name": "7dtd-launcher",
+  "version": "0.1.0",
+  "private": true,
+  "description": "七日杀（7 Days to Die）Electron 启动器：自动检测 Steam 游戏目录、管理 Mod 与存档、一键启动",
+  "main": "src/main/main.js",
+  "author": "Sole0nce",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "test": "node --test",
+    "test:watch": "node --test --watch test/",
+    "dist": "electron-builder --win portable",
+    "dist:nsis": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^45.3.2"
+  },
+  "build": {
+    "appId": "com.sole0nce.sevendtdlauncher",
+    "productName": "七日杀启动器",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "icon": "build/icon.ico"
+    }
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
